@@ -4,61 +4,26 @@ This repository contains an **fMRI analysis pipeline implementing functional ali
 
 The methods are based on:
 
-**Kilmarx, J., Oblak, E., Sulzer, J., & Lewis-Peacock, J. (2021). Towards a common template for neural reinforcement of finger individuation. Scientific Reports, 11(1), 1065.**
+**Kilmarx, J.**, Oblak, E., Sulzer, J., & Lewis-Peacock, J. (2021). Towards a common template for neural reinforcement of finger individuation. _Scientific Reports_, 11(1), 1065.
 
----
 
-## 🚀 Overview
-
-This project demonstrates how **hyperalignment** can be used to:
-
-- Align neural representations across participants
-- Improve between-subject decoding performance
-- Construct a shared neural template for classification
-
-This approach is particularly useful in applications such as **neurofeedback and stroke rehabilitation**, where patients may be unable to generate reliable neural patterns, and surrogate templates derived from healthy individuals are required.
-
----
-
-## 📊 Repository Contents
-
-### 🧪 Notebook
-`hyperalignment_codes.ipynb`
-
-Walkthrough of:
-- Preprocessing pipeline
-- Feature selection
-- Hyperalignment procedure
-- Classification and evaluation
-
----
-
-### ⚙️ Helper Functions
-`hyperalignment_functions.py`
-
-Implements:
-- Functional alignment (Procrustes-based hyperalignment)
-- Data transformation into common model space
-- Classification utilities
-
----
-
-## 🧠 Hyperalignment Overview
+## Overview
 
 ![Hyperalignment Overview](hyperalignment_overview.png)
 
 Hyperalignment transforms individual participant data into a **shared representational space** by aligning voxel-wise activity patterns using Procrustean transformations.
 
-This allows:
-- pooling data across subjects
-- improving statistical power
-- enabling generalization to new individuals
+This project demonstrates how **hyperalignment** can be used to:
+- Align neural representations across participants
+- Improve between-subject decoding performance
+- Construct a shared neural template for classification
 
----
+This approach is particularly useful in applications such as **real-time neurofeedback and stroke rehabilitation**, where patients may be unable to generate reliable neural patterns, and surrogate templates derived from healthy individuals are required.
 
-## 🔬 Key Findings (from original study)
 
-### 📊 Hyperalignment Improves Cross-Subject Decoding
+## Key Findings (from original study)
+
+### Hyperalignment Improves Cross-Subject Decoding
 
 - Functional alignment significantly outperforms anatomical alignment
 - Enables reliable **decoding of fine-grained motor representations across individuals**  
@@ -68,11 +33,7 @@ Hyperalignment improved classification accuracy from **~46% (anatomical alignmen
 
 ![Classification Accuracy](classification_accuracy.png)
 
----
-
-### 🧩 Generalization to Missing Data
-
-![Missing Data Inference](missing_data.png)
+### Generalization to Missing Data
 
 The model can **infer neural representations that were excluded during hyperalignment**, leveraging shared structure learned from other participants.
 
@@ -80,9 +41,30 @@ Even when specific categories (e.g., individual fingers) were omitted during ali
 
 This demonstrates robustness in scenarios where a participant cannot generate all required neural patterns.
 
----
+![Missing Data Inference](missing_data.png)
 
-## ⚠️ Data Availability
+## Repository Contents
+
+### Notebook
+`hyperalignment_codes.ipynb`
+
+Walkthrough of:
+- Preprocessing pipeline
+- ANOVA-based feature selection
+- Hyperalignment procedure
+- Classification and evaluation
+
+
+### Helper Functions
+`hyperalignment_functions.py`
+
+Implements:
+- Data loading and preprocessing
+- Functional alignment (Procrustes-based hyperalignment)
+- Data transformation into common model space
+- Classification utilities
+
+## Data Availability
 
 The original dataset is not included in this repository.
 
